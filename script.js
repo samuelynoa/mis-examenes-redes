@@ -35,25 +35,41 @@ function iniciarExamen(modo) {
 
 function renderizarPreguntas() {
     const contenedor = document.getElementById('contenedor-preguntas');
-    contenedor.innerHTML = preguntas.map((p, i) => `
+    contenedor.innerHTML = preguntas.map((p, i) => {
+        // Determinamos si es de selección múltiple viendo si 'correcta' es un Array
+        const esMultiple = Array.isArray(p.correcta);
+        const tipoInput = esMultiple ? 'checkbox' : 'radio';
+
+        return `
         <div class="card mb-3 shadow-sm">
             <div class="card-body">
-                <h5>${i + 1}. ${p.pregunta}</h5>
+                <h5>${i + 1}. ${p.pregunta} ${esMultiple ? '<small class="text-muted">(Elija varias)</small>' : ''}</h5>
                 ${p.opciones.map((opt, j) => `
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="p${i}" id="p${i}o${j}" 
-                               onclick="registrarRespuesta(${i}, ${j})">
+                        <input class="form-check-input" type="${tipoInput}" name="p${i}" id="p${i}o${j}" 
+                               onclick="registrarRespuesta(${i}, ${j}, ${esMultiple})">
                         <label class="form-check-label" for="p${i}o${j}">${opt}</label>
                     </div>
                 `).join('')}
                 <div id="feedback-${i}" class="feedback hidden"></div>
             </div>
-        </div>
-    `).join('');
+        </div>`;
+    }).join('');
 }
 
-function registrarRespuesta(pIdx, oIdx) {
-    respuestasUsuario[pIdx] = oIdx;
+function registrarRespuesta(pIdx, oIdx, esMultiple) {
+    if (esMultiple) {
+        if (!respuestasUsuario[pIdx]) respuestasUsuario[pIdx] = [];
+        const pos = respuestasUsuario[pIdx].indexOf(oIdx);
+        if (pos === -1) {
+            respuestasUsuario[pIdx].push(oIdx);
+        } else {
+            respuestasUsuario[pIdx].splice(pos, 1);
+        }
+    } else {
+        respuestasUsuario[pIdx] = oIdx;
+    }
+
     if (modoActual === 'practica') {
         mostrarFeedback(pIdx);
     }
@@ -72,7 +88,20 @@ function mostrarFeedback(i) {
 function finalizarExamen() {
     let aciertos = 0;
     preguntas.forEach((p, i) => {
-        if (respuestasUsuario[i] === p.correcta) aciertos++;
+        const respuesta = respuestasUsuario[i];
+        const correcta = p.correcta;
+        
+        let esCorrecto = false;
+        if (Array.isArray(correcta)) {
+            // Verifica que tengan el mismo largo y mismos elementos
+            esCorrecto = Array.isArray(respuesta) && 
+                         respuesta.length === correcta.length && 
+                         correcta.every(val => respuesta.includes(val));
+        } else {
+            esCorrecto = respuesta === correcta;
+        }
+
+        if (esCorrecto) aciertos++;
         mostrarFeedback(i);
     });
 

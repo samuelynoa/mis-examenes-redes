@@ -36,14 +36,16 @@ function iniciarExamen(modo) {
 function renderizarPreguntas() {
     const contenedor = document.getElementById('contenedor-preguntas');
     contenedor.innerHTML = preguntas.map((p, i) => {
-        // Determinamos si es de selección múltiple viendo si 'correcta' es un Array
         const esMultiple = Array.isArray(p.correcta);
         const tipoInput = esMultiple ? 'checkbox' : 'radio';
+        // HTML de la imagen si existe
+        const htmlImagen = p.imagen ? `<img src="${p.imagen}" class="img-fluid my-3 border rounded" style="max-height: 300px;">` : '';
 
         return `
         <div class="card mb-3 shadow-sm">
             <div class="card-body">
                 <h5>${i + 1}. ${p.pregunta} ${esMultiple ? '<small class="text-muted">(Elija varias)</small>' : ''}</h5>
+                ${htmlImagen}
                 ${p.opciones.map((opt, j) => `
                     <div class="form-check">
                         <input class="form-check-input" type="${tipoInput}" name="p${i}" id="p${i}o${j}" 

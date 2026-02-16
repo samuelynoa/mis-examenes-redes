@@ -1,39 +1,119 @@
 [
   {
-    "pregunta": "¿A qué tipo de red debería acceder un empleado para obtener información confidencial de precios en los servidores internos de la oficina central?",
-    "opciones": [
-      "Internet",
-      "Una intranet",
-      "Una red de área local",
-      "Una extranet"
-    ],
+    "pregunta": "1. Un empleado de una sucursal está realizando una cotización para un cliente. Para ello, necesita acceder a la información confidencial sobre precios que se encuentra en los servidores internos de la oficina central. ¿A qué tipo de red debería acceder el empleado?",
+    "opciones": ["Internet", "Una intranet", "Una red de área local", "Una extranet"],
     "correcta": 1,
-    "feedback": "El término 'intranet' se refiere a la conexión privada de LAN y WAN que pertenecen a una organización, diseñada para miembros autorizados."
+    "feedback": "El término 'intranet' se utiliza para referirse a la conexión privada de LAN y WAN que pertenecen a una organización."
   },
   {
-    "pregunta": "¿Cuáles son los dos criterios que se utilizan para seleccionar un medio de red? (Elija dos)",
+    "pregunta": "2. ¿Cuáles son los dos criterios que se utilizan para seleccionar un medio de red entre varios medios de red? (Elija dos opciones).",
     "opciones": [
-      "La distancia que el medio puede transportar la señal",
-      "La cantidad de dispositivos intermedios",
-      "El costo de los dispositivos finales",
-      "El entorno donde se instalará el medio"
+      "La distancia que el medio seleccionado puede transportar una señal correctamente",
+      "La cantidad de dispositivos intermedios instalados en la red",
+      "El costo de los dispositivos finales que se utilizan en la red",
+      "El entorno en el que se debe instalar el medio seleccionado",
+      "Los tipos de datos que se deben priorizar"
     ],
-    "correcta": 0,
-    "feedback": "Los criterios incluyen la distancia, el entorno, la cantidad de datos/velocidad y el costo del medio."
+    "correcta": [0, 3],
+    "feedback": "Los criterios principales son la distancia y el entorno de instalación."
   },
   {
-    "pregunta": "¿Qué función tiene la tecla de tabulación al introducir un comando en IOS?",
+    "pregunta": "3. Un usuario está implementando una política de seguridad en una red de oficina pequeña. ¿Cuáles son las dos acciones que proporcionarían los requisitos mínimos de seguridad para esta red? (Elija dos opciones).",
     "opciones": [
-      "Desplaza el cursor al principio de la línea.",
+      "Implementación de un sistema de detección de intrusiones",
+      "Instalación de una red inalámbrica",
+      "Implementación de un firewall",
+      "Agregado de un dispositivo de prevención de intrusiones exclusivo",
+      "Instalación de un software antivirus"
+    ],
+    "correcta": [2, 4],
+    "feedback": "Los requisitos mínimos son software antivirus/antimalware y un firewall."
+  },
+  {
+    "pregunta": "4. ¿Cuál de estas interfaces permite la administración remota de un switch de capa 2?",
+    "opciones": [
+      "La primera interfaz de puerto Ethernet",
+      "La interfaz de puerto de consola",
+      "La interfaz virtual del switch (SVI)",
+      "La interfaz auxiliar"
+    ],
+    "correcta": 2,
+    "feedback": "La SVI (Switch Virtual Interface) permite la gestión IP remota."
+  },
+  {
+    "pregunta": "5. ¿Qué función tiene la tecla de tabulación al introducir un comando en IOS?",
+    "opciones": [
+      "Desplaza el cursor hacia el principio de la línea.",
       "Completa el resto de una palabra escrita parcialmente.",
       "Anula el comando actual.",
       "Sale del modo de configuración."
     ],
     "correcta": 1,
-    "feedback": "Si se presiona Tab después de escribir parcialmente un comando, el IOS completa el resto de la palabra."
+    "feedback": "La tecla TAB completa los comandos escritos parcialmente."
   },
   {
-    "pregunta": "¿Qué comando evita que todas las contraseñas sin encriptar se muestren como texto no cifrado?",
+    "pregunta": "6. Consulte la ilustración. Si el administrador utiliza una conexión de consola, ¿qué contraseña se necesita para acceder al modo EXEC del usuario?",
+    "imagen": "https://examenredes.com/wp-content/uploads/2020/01/ccna1-v7-modulos-1-3-q6.png",
+    "opciones": ["letmein", "secretin", "lineconin", "linevtyin"],
+    "correcta": 2,
+    "feedback": "El comando 'line console 0' define la contraseña de consola."
+  },
+  {
+    "pregunta": "7. Un técnico configura un switch: SwitchA(config)# interface vlan 1, ip address 192.168.1.1 255.255.255.0, no shutdown. ¿Qué configura el técnico?",
+    "opciones": ["Acceso físico", "Cifrado", "Acceso por Telnet", "SVI"],
+    "correcta": 3,
+    "feedback": "Se está configurando la interfaz virtual del switch para administración."
+  },
+  {
+    "pregunta": "8. ¿Cuáles son dos características de la RAM en un dispositivo Cisco? (Elija dos).",
+    "opciones": [
+      "Contenido perdido al apagar el dispositivo.",
+      "Almacena varias versiones de IOS.",
+      "Almacenamiento no volátil.",
+      "Componente solo de switches, no routers.",
+      "La configuración en ejecución se almacena en la RAM."
+    ],
+    "correcta": [0, 4],
+    "feedback": "La RAM es volátil y contiene la running-config."
+  },
+  {
+    "pregunta": "9. ¿Cuáles son los dos nombres de host que cumplen las pautas de convenciones de nomenclatura de Cisco? (Elija dos).",
+    "opciones": ["Floor(15)", "SwBranch799", "Branch2!", "HO Floor 17", "RM-3-Switch-2A4"],
+    "correcta": [1, 4],
+    "feedback": "Los nombres deben empezar con letra, no tener espacios y usar solo letras, dígitos y guiones."
+  },
+  {
+    "pregunta": "10. ¿Cuáles son tres características de una SVI? (Elija tres).",
+    "opciones": [
+      "Administra un switch remotamente.",
+      "Interfaz especial para distintos medios.",
+      "No asociada a interfaz física.",
+      "Asociada con VLAN 1 por defecto.",
+      "Requerida para conectividad de cualquier dispositivo.",
+      "Protocolo de seguridad."
+    ],
+    "correcta": [0, 2, 3],
+    "feedback": "Es virtual (software), gestiona remotamente y usa la VLAN 1 por defecto."
+  },
+  {
+    "pregunta": "13. En el comando 'show running-config', ¿qué es 'running-config'?",
+    "opciones": ["Una variable", "Un prompt", "El comando", "Una palabra clave"],
+    "correcta": 3,
+    "feedback": "La palabra clave especifica qué debe mostrar el comando principal."
+  },
+  {
+    "pregunta": "14. ¿Qué sucede al emitir 'copy running-config startup-config'?",
+    "opciones": [
+      "Se almacena en memoria flash.",
+      "Se carga la nueva configuración al reiniciar.",
+      "Reemplaza el archivo IOS.",
+      "Se restaura la configuración original."
+    ],
+    "correcta": 1,
+    "feedback": "Copia la configuración activa a la NVRAM (inicio)."
+  },
+  {
+    "pregunta": "15. ¿Qué comando evita que las contraseñas se vean en texto plano?",
     "opciones": [
       "(config-line)# password secret",
       "(config)# enable secret",
@@ -41,6 +121,118 @@
       "(config)# enable password secret"
     ],
     "correcta": 2,
-    "feedback": "El comando service password-encryption encripta todas las contraseñas configuradas en el archivo de configuración."
+    "feedback": "service password-encryption aplica un cifrado débil a todas las claves."
+  },
+  {
+    "pregunta": "17. ¿Qué método asegura que no se descarten paquetes porque se envían demasiado rápido?",
+    "opciones": ["Tiempo de espera", "Método de acceso", "Control de flujo", "Encapsulación"],
+    "correcta": 2,
+    "feedback": "El control de flujo sincroniza la velocidad de envío y recepción."
+  },
+  {
+    "pregunta": "19. ¿Qué tres protocolos de aplicación forman parte de TCP/IP? (Elija tres).",
+    "opciones": ["ARP", "FTP", "NAT", "PPP", "DHCP", "DNS"],
+    "correcta": [1, 4, 5],
+    "feedback": "FTP, DHCP y DNS operan en la capa de aplicación."
   }
+
+  {
+    "pregunta": "31. ¿Qué característica de una red permite que esta se expanda rápidamente para admitir a nuevos usuarios y aplicaciones sin afectar el rendimiento del servicio enviado a los usuarios actuales?",
+    "opciones": ["Escalabilidad", "Seguridad", "Calidad de servicio (QoS)", "Accesibilidad"],
+    "correcta": 0,
+    "feedback": "La escalabilidad es la capacidad de una red de crecer para admitir nuevos usuarios y funciones."
+  },
+  {
+    "pregunta": "32. ¿Qué tipo de tráfico de red requiere QoS para reducir retrasos y asegurar la calidad?",
+    "opciones": ["Videoconferencia", "Correo electrónico", "Compras en línea", "Wiki"],
+    "correcta": 0,
+    "feedback": "El tráfico en tiempo real, como voz y video, es extremadamente sensible a las demoras y requiere prioridad mediante QoS."
+  },
+  {
+    "pregunta": "33. ¿Cuál es la ventaja de utilizar protocolos de estándar abierto?",
+    "opciones": [
+      "Permite que dispositivos de diferentes fabricantes se comuniquen.",
+      "Garantiza que el software sea gratuito.",
+      "Evita que se produzcan errores en la red.",
+      "Elimina la necesidad de seguridad en la capa física."
+    ],
+    "correcta": 0,
+    "feedback": "Los estándares abiertos como TCP/IP permiten la interoperabilidad entre distintos proveedores."
+  },
+  {
+    "pregunta": "34. ¿Qué término describe la capacidad de usar dispositivos personales en una red empresarial?",
+    "opciones": ["BYOD", "Extranet", "Cloud Computing", "SaaS"],
+    "correcta": 0,
+    "feedback": "BYOD (Bring Your Own Device) permite a los empleados usar sus propios dispositivos para trabajar."
+  },
+  {
+    "pregunta": "35. ¿En qué capa del modelo OSI se agregan las direcciones IP de origen y destino?",
+    "opciones": ["Capa de Red", "Capa de Transporte", "Capa de Enlace de Datos", "Capa Física"],
+    "correcta": 0,
+    "feedback": "La capa de Red (Capa 3) se encarga del direccionamiento lógico e IP."
+  },
+  {
+    "pregunta": "36. ¿Qué nombre se le asigna a la PDU de la capa de transporte?",
+    "opciones": ["Segmento", "Paquete", "Trama", "Bits"],
+    "correcta": 0,
+    "feedback": "En la capa de transporte, los datos se encapsulan en segmentos."
+  },
+  {
+    "pregunta": "37. ¿Cuál es el orden correcto de las capas del modelo OSI de arriba hacia abajo?",
+    "opciones": [
+      "Aplicación, Presentación, Sesión, Transporte, Red, Enlace de Datos, Física",
+      "Física, Enlace de Datos, Red, Transporte, Sesión, Presentación, Aplicación",
+      "Aplicación, Sesión, Presentación, Transporte, Red, Enlace de Datos, Física",
+      "Red, Transporte, Sesión, Aplicación, Física, Enlace de Datos, Presentación"
+    ],
+    "correcta": 0,
+    "feedback": "El orden correcto es: Aplicación (7), Presentación (6), Sesión (5), Transporte (4), Red (3), Enlace de Datos (2) y Física (1)."
+  },
+  {
+    "pregunta": "38. ¿Qué dirección lógica se utiliza para la entrega de datos a una red remota?",
+    "opciones": ["Dirección IP de destino", "Dirección MAC de destino", "Puerto de destino", "Dirección MAC de origen"],
+    "correcta": 0,
+    "feedback": "Las direcciones IP se utilizan para identificar hosts en redes remotas."
+  },
+  {
+    "pregunta": "39. ¿Qué protocolo se utiliza para asignar direcciones IP de forma automática?",
+    "opciones": ["DHCP", "DNS", "HTTP", "FTP"],
+    "correcta": 0,
+    "feedback": "DHCP (Dynamic Host Configuration Protocol) asigna configuraciones IP dinámicamente."
+  },
+  {
+    "pregunta": "40. ¿Cuál es el propósito del proceso de encapsulación?",
+    "opciones": [
+      "Agregar información de control en cada capa al enviar datos.",
+      "Eliminar errores de la transmisión.",
+      "Aumentar la velocidad de la red.",
+      "Convertir señales digitales en analógicas."
+    ],
+    "correcta": 0,
+    "feedback": "La encapsulación añade encabezados y tráileres a los datos mientras bajan por las capas del modelo."
+  },
+  {
+    "pregunta": "41. ¿Qué comando se utiliza para ver la tabla de enrutamiento en un router Cisco?",
+    "opciones": ["show ip route", "show ip interface brief", "show running-config", "show version"],
+    "correcta": 0,
+    "feedback": "El comando 'show ip route' muestra las redes que el router conoce."
+  },
+  {
+    "pregunta": "42. Un administrador desea cambiar el nombre de un switch. ¿En qué modo debe estar?",
+    "opciones": ["Modo de configuración global", "Modo EXEC del usuario", "Modo EXEC privilegiado", "Modo de configuración de línea"],
+    "correcta": 0,
+    "feedback": "Los cambios de nombre (hostname) se realizan en el modo de configuración global."
+  },
+  {
+    "pregunta": "43. ¿Cuál de estas es una característica de una red punto a punto?",
+    "opciones": [
+      "No requiere un servidor dedicado.",
+      "Es altamente escalable.",
+      "Ofrece una seguridad centralizada superior.",
+      "Requiere un sistema operativo de red complejo."
+    ],
+    "correcta": 0,
+    "feedback": "En redes P2P, cada dispositivo actúa como cliente y servidor, sin servidor central."
+  }
+]
 ]

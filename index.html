@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Exámenes Redes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f4f7f9; }
+        .card-examen { transition: transform 0.2s; cursor: pointer; }
+        .card-examen:hover { transform: translateY(-5px); }
+        .hidden { display: none; }
+        .feedback { margin-top: 10px; padding: 10px; border-radius: 5px; }
+        .correct { background-color: #d4edda; color: #155724; }
+        .incorrect { background-color: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark mb-4">
+    <div class="container">
+        <span class="navbar-brand mb-0 h1">Simulador CCNA</span>
+        <button class="btn btn-outline-light btn-sm" onclick="mostrarMenu()">Inicio</button>
+    </div>
+</nav>
+
+<div class="container">
+    <div id="menu-principal">
+        <h2 class="text-center mb-4">Selecciona tu examen</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-primary text-white">CCNA 1: Introducción a Redes</div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <button class="list-group-item list-group-item-action" onclick="prepararExamen('ccna1-mod1-3', 'Módulos 1-3: Conectividad Básica')">Módulos 1-3</button>
+                            </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-success text-white">CCNA 2: Switching & Routing</div>
+                    <div class="card-body text-muted text-center">Próximamente...</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-info text-white">CCNA 3: Enterprise Networking</div>
+                    <div class="card-body text-muted text-center">Próximamente...</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <h4>Historial de Puntajes</h4>
+            <div class="table-responsive bg-white shadow-sm p-3 rounded">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Examen</th>
+                            <th>Puntaje</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-historial"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="config-examen" class="hidden text-center">
+        <h3 id="titulo-seleccionado"></h3>
+        <p>Selecciona el modo de toma de examen:</p>
+        <div class="btn-group mb-4" role="group">
+            <button type="button" class="btn btn-outline-primary" onclick="iniciarExamen('practica')">Modo Práctica (Feedback Inmediato)</button>
+            <button type="button" class="btn btn-primary" onclick="iniciarExamen('examen')">Modo Examen (Calificar al final)</button>
+        </div>
+    </div>
+
+    <div id="area-examen" class="hidden">
+        <div id="contenedor-preguntas"></div>
+        <button id="btn-finalizar" class="btn btn-danger mt-4 w-100 hidden" onclick="finalizarExamen()">Finalizar y Calificar</button>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

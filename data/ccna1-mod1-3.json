@@ -1,1 +1,46 @@
-
+[
+  {
+    "pregunta": "¿A qué tipo de red debería acceder un empleado para obtener información confidencial de precios en los servidores internos de la oficina central?",
+    "opciones": [
+      "Internet",
+      "Una intranet",
+      "Una red de área local",
+      "Una extranet"
+    ],
+    "correcta": 1,
+    "feedback": "El término 'intranet' se refiere a la conexión privada de LAN y WAN que pertenecen a una organización, diseñada para miembros autorizados."
+  },
+  {
+    "pregunta": "¿Cuáles son los dos criterios que se utilizan para seleccionar un medio de red? (Elija dos)",
+    "opciones": [
+      "La distancia que el medio puede transportar la señal",
+      "La cantidad de dispositivos intermedios",
+      "El costo de los dispositivos finales",
+      "El entorno donde se instalará el medio"
+    ],
+    "correcta": 0,
+    "feedback": "Los criterios incluyen la distancia, el entorno, la cantidad de datos/velocidad y el costo del medio."
+  },
+  {
+    "pregunta": "¿Qué función tiene la tecla de tabulación al introducir un comando en IOS?",
+    "opciones": [
+      "Desplaza el cursor al principio de la línea.",
+      "Completa el resto de una palabra escrita parcialmente.",
+      "Anula el comando actual.",
+      "Sale del modo de configuración."
+    ],
+    "correcta": 1,
+    "feedback": "Si se presiona Tab después de escribir parcialmente un comando, el IOS completa el resto de la palabra."
+  },
+  {
+    "pregunta": "¿Qué comando evita que todas las contraseñas sin encriptar se muestren como texto no cifrado?",
+    "opciones": [
+      "(config-line)# password secret",
+      "(config)# enable secret",
+      "(config)# service password-encryption",
+      "(config)# enable password secret"
+    ],
+    "correcta": 2,
+    "feedback": "El comando service password-encryption encripta todas las contraseñas configuradas en el archivo de configuración."
+  }
+]

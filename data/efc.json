@@ -1,2 +1,912 @@
 [
+  {
+    "pregunta": "1. Consulte la ilustración. La NAT estática se configura para permitir el acceso de la PC 1 al servidor web en la red interna. ¿Qué dos direcciones se requieren en lugar de A y B para completar la configuración de la NAT estática? (Elija dos opciones.)",
+    "opciones": ["A = 10.1.0.13", "B = 209.165.201.1", "B = 209.165.201.7", "B = 10.0.254.5", "A = 209.165.201.2"],
+    "correcta": [0, 1],
+    "feedback": "La NAT estática es una asignación personalizada entre una dirección local interna y una dirección global interna. Mediante el uso de una NAT estática, los dispositivos externos pueden iniciar conexiones a dispositivos internos con las direcciones globales internas."
+  },
+  {
+    "pregunta": "2. Un ingeniero de red está utilizando el software de administrador SNMP para supervisar y administrar el rendimiento de la red... ¿Qué tipo de mensaje está configurado en esos dispositivos que les permiten enviar mensajes no solicitados?",
+    "opciones": ["get-bulk-request", "get-response", "Solicitud set", "trap"],
+    "correcta": 3,
+    "feedback": "Los mensajes 'trap' son enviados por el agente SNMP al administrador cuando ocurren eventos preconfigurados específicos."
+  },
+  {
+    "pregunta": "3. ¿Cuál es el propósito de la palabra clave «overload» en el comando «ip nat inside source list 1 pool NAT_POOL overload»?",
+    "opciones": [
+      "Permite que muchos hosts internos compartan una o algunas direcciones globales internas.",
+      "Permite que los hosts internos utilicen un conjunto de direcciones globales internas.",
+      "Permite que los hosts externos inicien sesiones con los hosts internos.",
+      "Permite que una lista de hosts internos se comunique con un grupo específico de hosts externos."
+    ],
+    "correcta": 0,
+    "feedback": "La palabra clave 'overload' habilita PAT (Traducción de Direcciones de Puerto), permitiendo que múltiples direcciones IP locales se traduzcan a una única dirección global utilizando diferentes números de puerto."
+  },
+  {
+    "pregunta": "4. Consulte la ilustración. ¿Cuál es el nivel de gravedad Syslog del mensaje que se generó?",
+    "opciones": ["Informativo", "Notificación", "Error", "Alerta"],
+    "correcta": 2,
+    "feedback": "En el mensaje %LINK-3-UPDOWN, el número 3 indica el nivel de gravedad. Según la jerarquía de Syslog, el nivel 3 corresponde a 'Error'."
+  },
+  {
+    "pregunta": "5. Al aprender rutas al mismo destino de diferentes protocolos de enrutamiento, ¿qué utiliza un router para elegir la mejor ruta?",
+    "opciones": ["Costo", "Métrica", "Conteo de saltos", "Distancia administrativa"],
+    "correcta": 3,
+    "feedback": "La distancia administrativa (AD) se utiliza para determinar qué protocolo de enrutamiento es más confiable y, por lo tanto, cuál elegir si hay múltiples fuentes para la misma ruta."
+  },
+  {
+    "pregunta": "6. ¿Cuándo se debe especificar tanto una dirección IPv6 de siguiente salto como una interfaz de salida en una ruta estática?",
+    "opciones": [
+      "Cuando la ruta estática es una ruta predeterminada.",
+      "Cuando se habilita CEF.",
+      "Cuando la interfaz de salida es una interfaz punto a punto.",
+      "Cuando el siguiente salto es una dirección link-local."
+    ],
+    "correcta": 3,
+    "feedback": "Las direcciones link-local solo son válidas en un enlace específico; por lo tanto, se requiere la interfaz de salida para que el router sepa por dónde enviar el paquete."
+  },
+  {
+    "pregunta": "7. ¿Qué representa un conjunto de routers que da la sensación de ser un único router para los hosts en una LAN compatible con FHRP?",
+    "opciones": ["Gateway predeterminado", "Router virtual", "Router de reserva", "Router de reenvío"],
+    "correcta": 1,
+    "feedback": "FHRP (Protocolo de Redundancia de Primer Salto) crea un router virtual con su propia dirección IP y MAC que es compartido por varios routers físicos."
+  },
+  {
+    "pregunta": "8. ¿En qué situación se requieren elecciones de DR y BDR en una red OSPF?",
+    "opciones": [
+      "Cuando los dos vecinos adyacentes están en dos redes diferentes.",
+      "Cuando los routers están interconectados a través de una red Ethernet común.",
+      "Cuando todos los routers de un área OSPF no pueden formar adyacencias.",
+      "Cuando los dos vecinos adyacentes están interconectados a través de un enlace punto a punto."
+    ],
+    "correcta": 1,
+    "feedback": "Las elecciones de DR y BDR son necesarias en redes multiacceso (como Ethernet) para reducir el número de adyacencias y el tráfico de LSA."
+  },
+  {
+    "pregunta": "9. ¿Qué comando es necesario para habilitar el enrutamiento de paquetes IPv6 en un router Cisco?",
+    "opciones": ["ipv6 unicast-routing", "ruta ipv6", "ipv6 address", "ipv6 enable"],
+    "correcta": 0,
+    "feedback": "El comando 'ipv6 unicast-routing' es obligatorio para que el router Cisco funcione como un nodo de enrutamiento IPv6."
+  },
+  {
+    "pregunta": "10. ¿Cuál es el beneficio de configurar PortFast en un puerto de switch?",
+    "opciones": [
+      "Evita la creación de un bucle de árbol de expansión.",
+      "Minimiza el tiempo de espera para que el enlace troncal converja.",
+      "Permite la transición inmediata del estado deshabilitado al de reenvío.",
+      "Permite que un dispositivo acceda a la red sin esperar que el árbol de expansión converja."
+    ],
+    "correcta": 3,
+    "feedback": "PortFast permite que un puerto de acceso pase directamente al estado de reenvío (Forwarding), evitando los retardos de escucha y aprendizaje de STP."
+  },
+  {
+    "pregunta": "11. ¿Qué comando permite a un administrador habilitar un router para enviar mensajes de Syslog a un servidor externo?",
+    "opciones": ["logging host", "logging console", "logging trap", "service sequence-numbers"],
+    "correcta": 0,
+    "feedback": "El comando 'logging host [IP]' especifica la dirección del servidor Syslog donde se enviarán los mensajes."
+  },
+  {
+    "pregunta": "12. ¿Qué característica describe una ACL estándar?",
+    "opciones": [
+      "Filtra basándose en direcciones IP de origen y destino.",
+      "Se debe colocar lo más cerca posible del destino.",
+      "Utiliza números del 100 al 199.",
+      "Se puede configurar con un nombre."
+    ],
+    "correcta": 1,
+    "feedback": "Las ACL estándar solo filtran por dirección de origen, por lo que deben colocarse lo más cerca posible del destino para no bloquear tráfico legítimo."
+  },
+  {
+    "pregunta": "13. ¿Cuál es la máscara de wildcard necesaria para permitir solo la red 192.168.10.0/24?",
+    "opciones": ["0.0.0.255", "255.255.255.0", "0.0.0.0", "0.0.255.255"],
+    "correcta": 0,
+    "feedback": "Para una máscara /24 (255.255.255.0), la wildcard inversa es 0.0.0.255."
+  },
+  {
+    "pregunta": "14. ¿Qué comando se utiliza para verificar la configuración de NAT estática?",
+    "opciones": ["show ip nat translations", "show ip route", "show access-lists", "debug ip nat"],
+    "correcta": 0,
+    "feedback": "El comando 'show ip nat translations' muestra las entradas activas en la tabla de traducción de NAT."
+  },
+  {
+    "pregunta": "15. ¿Qué dirección IPv6 se utiliza habitualmente como siguiente salto en una ruta estática?",
+    "opciones": ["Dirección Link-local", "Dirección Global Unicast", "Dirección Multicast", "Dirección Loopback"],
+    "correcta": 0,
+    "feedback": "En las configuraciones de IPv6, es común y recomendado utilizar la dirección link-local del router adyacente como siguiente salto."
+  },
+  {
+    "pregunta": "16. ¿Qué estado de STP indica que el puerto está reenviando datos y aprendiendo direcciones MAC?",
+    "opciones": ["Forwarding", "Listening", "Learning", "Blocking"],
+    "correcta": 0,
+    "feedback": "En el estado 'Forwarding', el puerto es totalmente funcional dentro de la red."
+  },
+  {
+    "pregunta": "17. ¿Cuál es la métrica predeterminada de OSPF?",
+    "opciones": ["Costo", "Ancho de banda", "Retardo", "Carga"],
+    "correcta": 0,
+    "feedback": "OSPF utiliza el 'Costo' como métrica, el cual se calcula basándose en el ancho de banda de referencia dividido por el ancho de banda del enlace."
+  },
+  {
+    "pregunta": "18. ¿Qué protocolo FHRP es estándar abierto?",
+    "opciones": ["VRRP", "HSRP", "GLBP", "STP"],
+    "correcta": 0,
+    "feedback": "VRRP es el protocolo estándar de la industria, mientras que HSRP y GLBP son propietarios de Cisco."
+  },
+  {
+    "pregunta": "19. ¿Cuál es la distancia administrativa de una ruta estática?",
+    "opciones": ["1", "0", "90", "110"],
+    "correcta": 0,
+    "feedback": "Las rutas estáticas tienen una AD predeterminada de 1 (excepto si son directamente conectadas, que es 0)."
+  },
+  {
+    "pregunta": "20. ¿Qué comando se usa para ver los vecinos OSPF?",
+    "opciones": ["show ip ospf neighbor", "show ip ospf database", "show ip route ospf", "show ip ospf interface"],
+    "correcta": 0,
+    "feedback": "Este comando permite verificar si se han formado adyacencias correctamente con otros routers."
+  },
+  {
+    "pregunta": "21. ¿Qué tipo de ruta estática se configura con una distancia administrativa mayor que la del protocolo de enrutamiento dinámico principal?",
+    "opciones": ["Ruta estática flotante", "Ruta estática estándar", "Ruta estática resumida", "Ruta estática predeterminada"],
+    "correcta": 0,
+    "feedback": "Una ruta estática flotante se utiliza como respaldo y solo aparece en la tabla de enrutamiento si la ruta principal falla."
+  },
+  {
+    "pregunta": "22. ¿Cuál es el rango de VLANs normales en un switch Cisco?",
+    "opciones": ["1 a 1005", "1 a 4094", "1006 a 4094", "1 a 1001"],
+    "correcta": 0,
+    "feedback": "El rango normal de VLAN va de 1 a 1005, mientras que el rango extendido llega hasta 4094."
+  },
+  {
+    "pregunta": "23. ¿Qué protocolo se utiliza para automatizar la asignación de direcciones IP en una red?",
+    "opciones": ["DHCP", "DNS", "ICMP", "SNMP"],
+    "correcta": 0,
+    "feedback": "DHCP (Dynamic Host Configuration Protocol) asigna dinámicamente direcciones IP y otros parámetros de red."
+  },
+  {
+    "pregunta": "24. ¿Qué comando se usa para configurar una ruta estática predeterminada en IPv4?",
+    "opciones": ["ip route 0.0.0.0 0.0.0.0 [interfaz/IP]", "ip route 255.255.255.255 [IP]", "ip default-gateway [IP]", "ip default-network [IP]"],
+    "correcta": 0,
+    "feedback": "La ruta 0.0.0.0 0.0.0.0 coincide con cualquier red de destino desconocida."
+  },
+  {
+    "pregunta": "25. ¿Qué componente de la arquitectura SDN se encarga de tomar decisiones de reenvío?",
+    "opciones": ["Plano de control", "Plano de datos", "Plano de gestión", "Plano de aplicación"],
+    "correcta": 0,
+    "feedback": "En SDN, el plano de control se centraliza en un controlador que toma las decisiones de enrutamiento."
+  },
+  {
+    "pregunta": "26. ¿Cuál es la función principal de un servidor DNS?",
+    "opciones": ["Traducir nombres de dominio a direcciones IP", "Asignar direcciones IP automáticamente", "Filtrar tráfico malicioso", "Almacenar archivos de usuario"],
+    "correcta": 0,
+    "feedback": "DNS resuelve nombres legibles (como google.com) en direcciones IP numéricas."
+  },
+  {
+    "pregunta": "27. ¿Qué método de switching comienza a reenviar el paquete en cuanto lee la dirección de destino?",
+    "opciones": ["Cut-through", "Store-and-forward", "Fragment-free", "Adaptive switching"],
+    "correcta": 0,
+    "feedback": "El switching cut-through reduce la latencia al no esperar a recibir todo el frame antes de reenviarlo."
+  },
+  {
+    "pregunta": "28. ¿Qué dirección IPv6 es equivalente a la dirección de loopback 127.0.0.1 de IPv4?",
+    "opciones": ["::1", "ff02::1", "fe80::1", "2001::1"],
+    "correcta": 0,
+    "feedback": "La dirección ::1 se utiliza para pruebas de loopback en la pila de protocolos IPv6."
+  },
+  {
+    "pregunta": "29. ¿Qué comando muestra el estado de las interfaces de un switch incluyendo la pertenencia a VLAN?",
+    "opciones": ["show interface status", "show vlan brief", "show ip interface brief", "show running-config"],
+    "correcta": 1,
+    "feedback": "El comando 'show vlan brief' es el más eficiente para ver qué puertos pertenecen a qué VLAN."
+  },
+  {
+    "pregunta": "30. ¿Qué tecnología permite combinar varios enlaces físicos en un solo enlace lógico para aumentar el ancho de banda?",
+    "opciones": ["EtherChannel", "STP", "VLAN", "Trunking"],
+    "correcta": 0,
+    "feedback": "EtherChannel agrupa enlaces redundantes para mejorar el rendimiento y proporcionar redundancia sin bucles de STP."
+  },
+  {
+    "pregunta": "31. ¿Qué campo del encabezado IPv4 se utiliza para evitar bucles infinitos de paquetes?",
+    "opciones": ["Time to Live (TTL)", "Protocol", "Checksum", "Fragment Offset"],
+    "correcta": 0,
+    "feedback": "El valor TTL disminuye en cada salto de router; si llega a cero, el paquete se descarta."
+  },
+  {
+    "pregunta": "32. ¿Cuál es el ID de VLAN predeterminado para todos los puertos de un switch Cisco?",
+    "opciones": ["VLAN 1", "VLAN 0", "VLAN 10", "VLAN 100"],
+    "correcta": 0,
+    "feedback": "Por defecto, todos los puertos pertenecen a la VLAN 1 hasta que se configuren de otra forma."
+  },
+  {
+    "pregunta": "33. ¿Qué protocolo utiliza el comando 'ping'?",
+    "opciones": ["ICMP", "TCP", "UDP", "ARP"],
+    "correcta": 0,
+    "feedback": "Ping utiliza mensajes de solicitud de eco y respuesta de eco de ICMP para verificar la conectividad."
+  },
+  {
+    "pregunta": "34. ¿Qué característica de seguridad de capa 2 ayuda a prevenir ataques de suplantación de DHCP?",
+    "opciones": ["DHCP Snooping", "Port Security", "Dynamic ARP Inspection", "BPDU Guard"],
+    "correcta": 0,
+    "feedback": "DHCP Snooping valida los mensajes DHCP y filtra los provenientes de servidores no autorizados."
+  },
+  {
+    "pregunta": "35. ¿Cuál es la prioridad predeterminada de una instancia de STP?",
+    "opciones": ["32768", "1", "4096", "16384"],
+    "correcta": 0,
+    "feedback": "32768 es el valor base al que se le suma el ID de la VLAN para formar el Bridge Priority."
+  },
+  {
+    "pregunta": "36. ¿Qué comando se usa para guardar la configuración actual en la memoria de inicio?",
+    "opciones": ["copy running-config startup-config", "write memory", "save config", "copy startup-config running-config"],
+    "correcta": [0, 1],
+    "feedback": "Ambos comandos aseguran que los cambios no se pierdan tras un reinicio."
+  },
+  {
+    "pregunta": "37. ¿Qué tipo de cable se usa para conectar un host a un puerto de consola de un router?",
+    "opciones": ["Cable rollover", "Cable cruzado", "Cable directo", "Cable de fibra"],
+    "correcta": 0,
+    "feedback": "Los cables rollover (o consola) se utilizan específicamente para la gestión local de dispositivos."
+  },
+  {
+    "pregunta": "38. ¿Cuál es el propósito de la red 169.254.0.0/16?",
+    "opciones": ["Direccionamiento APIPA", "Direccionamiento Privado Clase A", "Multicast", "Pruebas de red local"],
+    "correcta": 0,
+    "feedback": "APIPA asigna una IP automáticamente si el cliente no puede contactar con un servidor DHCP."
+  },
+  {
+    "pregunta": "39. ¿Qué puerto utiliza el protocolo HTTP?",
+    "opciones": ["80", "443", "21", "23"],
+    "correcta": 0,
+    "feedback": "El puerto 80 es el estándar para tráfico web no cifrado."
+  },
+  {
+    "pregunta": "40. ¿Qué comando permite ver la tabla de enrutamiento completa de un router?",
+    "opciones": ["show ip route", "show ip protocols", "show ip interface", "show running-config"],
+    "correcta": 0,
+    "feedback": "Este comando muestra todas las rutas conocidas (estáticas, dinámicas y conectadas)."
+  },
+  {
+    "pregunta": "41. ¿Qué comando se utiliza para crear una VLAN en un switch Cisco?",
+    "opciones": ["vlan [id]", "switchport access vlan [id]", "interface vlan [id]", "name vlan [id]"],
+    "correcta": 0,
+    "feedback": "El comando 'vlan [id]' desde el modo de configuración global ingresa al modo de configuración de la VLAN."
+  },
+  {
+    "pregunta": "42. ¿Qué tecnología se utiliza para proporcionar energía eléctrica a través de cables Ethernet?",
+    "opciones": ["PoE", "STP", "QoS", "LLDP"],
+    "correcta": 0,
+    "feedback": "Power over Ethernet (PoE) permite que los cables de red suministren energía a dispositivos como teléfonos IP y cámaras."
+  },
+  {
+    "pregunta": "43. ¿Cuál es el rango de puertos bien conocidos (Well-known ports)?",
+    "opciones": ["0 a 1023", "1024 a 49151", "49152 a 65535", "1 a 100"],
+    "correcta": 0,
+    "feedback": "Los puertos del 0 al 1023 están reservados para servicios y protocolos comunes por la IANA."
+  },
+  {
+    "pregunta": "44. ¿Qué tipo de dirección IPv6 comienza con FE80::/10?",
+    "opciones": ["Link-local", "Global Unicast", "Unique Local", "Multicast"],
+    "correcta": 0,
+    "feedback": "Las direcciones link-local son obligatorias en cada interfaz IPv6 y se usan para la comunicación en el mismo enlace."
+  },
+  {
+    "pregunta": "45. ¿Qué protocolo se utiliza para sincronizar los relojes de los dispositivos de red?",
+    "opciones": ["NTP", "SNMP", "VTP", "PTP"],
+    "correcta": 0,
+    "feedback": "NTP (Network Time Protocol) asegura que todos los dispositivos tengan la misma hora para el registro de eventos."
+  },
+  {
+    "pregunta": "46. ¿Cuál es la máscara de subred para un prefijo /27?",
+    "opciones": ["255.255.255.224", "255.255.255.192", "255.255.255.240", "255.255.255.248"],
+    "correcta": 0,
+    "feedback": "Un prefijo /27 utiliza 3 bits de la cuarta octeto (128+64+32 = 224)."
+  },
+  {
+    "pregunta": "47. ¿Qué comando se utiliza para verificar la configuración de EtherChannel?",
+    "opciones": ["show etherchannel summary", "show interfaces etherchannel", "show ip port-channel", "show bundle status"],
+    "correcta": 0,
+    "feedback": "Este comando proporciona una visión rápida del estado de los grupos de canales y sus miembros."
+  },
+  {
+    "pregunta": "48. ¿Qué mensaje envía un cliente DHCP para aceptar una dirección IP ofrecida?",
+    "opciones": ["DHCPREQUEST", "DHCPDISCOVER", "DHCPOFFER", "DHCPACK"],
+    "correcta": 0,
+    "feedback": "El cliente envía un DHCPREQUEST para solicitar formalmente la dirección ofrecida por el servidor."
+  },
+  {
+    "pregunta": "49. ¿Qué algoritmo utiliza el protocolo Spanning Tree para calcular la ruta libre de bucles?",
+    "opciones": ["STA", "Dijkstra", "DUAL", "Bellman-Ford"],
+    "correcta": 0,
+    "feedback": "STP utiliza el Spanning Tree Algorithm (STA) para determinar qué puertos bloquear."
+  },
+  {
+    "pregunta": "50. ¿Qué comando se utiliza para configurar el nombre de un dispositivo Cisco?",
+    "opciones": ["hostname [nombre]", "name [nombre]", "set name [nombre]", "device name [nombre]"],
+    "correcta": 0,
+    "feedback": "El comando hostname identifica al dispositivo en la red y en el prompt de la CLI."
+  },
+  {
+    "pregunta": "51. ¿Qué tipo de ACL utiliza el rango 1-99?",
+    "opciones": ["ACL Estándar IPv4", "ACL Extendida IPv4", "ACL de IPv6", "ACL con nombre"],
+    "correcta": 0,
+    "feedback": "Las ACL estándar de IPv4 utilizan tradicionalmente los rangos 1-99 y 1300-1999."
+  },
+  {
+    "pregunta": "52. ¿Qué modo de VTP permite crear VLANs que no se sincronizan con otros switches?",
+    "opciones": ["Transparent", "Server", "Client", "Off"],
+    "correcta": 0,
+    "feedback": "En modo transparente, el switch no propaga su base de datos de VLAN ni se sincroniza con otros."
+  },
+  {
+    "pregunta": "53. ¿Cuál es la dirección MAC de difusión (broadcast)?",
+    "opciones": ["FF:FF:FF:FF:FF:FF", "00:00:00:00:00:00", "01:00:5E:00:00:00", "EE:EE:EE:EE:EE:EE"],
+    "correcta": 0,
+    "feedback": "Una trama con destino FF:FF:FF:FF:FF:FF es procesada por todos los dispositivos en el dominio de broadcast."
+  },
+  {
+    "pregunta": "54. ¿Qué técnica permite a una interfaz de router actuar como puerta de enlace para múltiples VLANs?",
+    "opciones": ["Router-on-a-stick", "SVI", "HSRP", "Sub-interfaces"],
+    "correcta": [0, 3],
+    "feedback": "Router-on-a-stick utiliza subinterfaces lógicas para enrutar tráfico entre VLANs sobre un solo enlace físico."
+  },
+  {
+    "pregunta": "55. ¿Qué capa del modelo OSI se encarga del enrutamiento de paquetes?",
+    "opciones": ["Capa 3 (Red)", "Capa 2 (Enlace)", "Capa 4 (Transporte)", "Capa 1 (Física)"],
+    "correcta": 0,
+    "feedback": "La capa de red gestiona el direccionamiento lógico y el enrutamiento."
+  },
+  {
+    "pregunta": "56. ¿Qué protocolo es propietario de Cisco y sirve para descubrir dispositivos vecinos?",
+    "opciones": ["CDP", "LLDP", "SNMP", "ARP"],
+    "correcta": 0,
+    "feedback": "Cisco Discovery Protocol (CDP) funciona en la capa 2 y es exclusivo de equipos Cisco."
+  },
+  {
+    "pregunta": "57. ¿Cuál es el ancho de banda predeterminado de referencia para OSPF?",
+    "opciones": ["100 Mbps", "10 Mbps", "1000 Mbps", "1 Gbps"],
+    "correcta": 0,
+    "feedback": "Por defecto, OSPF usa 100 Mbps como referencia, lo que puede requerir ajuste en redes modernas más rápidas."
+  },
+  {
+    "pregunta": "58. ¿Qué comando se usa para encriptar todas las contraseñas de texto plano en la configuración?",
+    "opciones": ["service password-encryption", "enable secret", "encrypt passwords", "security password-encryption"],
+    "correcta": 0,
+    "feedback": "Este comando aplica un cifrado débil (tipo 7) a las contraseñas que aparecen en el archivo de configuración."
+  },
+  {
+    "pregunta": "59. ¿Qué tipo de ruta estática se usa para enviar todo el tráfico a un ISP?",
+    "opciones": ["Ruta predeterminada", "Ruta resumida", "Ruta de host", "Ruta flotante"],
+    "correcta": 0,
+    "feedback": "Una ruta predeterminada (0.0.0.0/0) se usa cuando no hay una coincidencia específica en la tabla de rutas."
+  },
+  {
+    "pregunta": "60. ¿Qué protocolo utiliza el puerto 22?",
+    "opciones": ["SSH", "Telnet", "FTP", "SMTP"],
+    "correcta": 0,
+    "feedback": "SSH utiliza el puerto 22 para proporcionar acceso remoto seguro y cifrado."
+  },
+  {
+    "pregunta": "61. ¿Qué comando se utiliza para mostrar las traducciones de NAT activas en un router?",
+    "opciones": ["show ip nat translations", "show ip nat statistics", "show running-config", "show ip route"],
+    "correcta": 0,
+    "feedback": "El comando 'show ip nat translations' muestra una lista de todas las traducciones actuales en la tabla de NAT."
+  },
+  {
+    "pregunta": "62. ¿Qué protocolo de capa de transporte es 'sin conexión' y tiene una sobrecarga mínima?",
+    "opciones": ["UDP", "TCP", "HTTP", "ICMP"],
+    "correcta": 0,
+    "feedback": "UDP no establece una conexión previa ni garantiza la entrega, lo que lo hace más rápido y ligero que TCP."
+  },
+  {
+    "pregunta": "63. ¿Cuál es el propósito del comando 'switchport mode trunk'?",
+    "opciones": [
+      "Configurar la interfaz para transportar tráfico de múltiples VLANs",
+      "Asignar la interfaz a una única VLAN de acceso",
+      "Habilitar PortFast en la interfaz",
+      "Limitar el número de direcciones MAC en el puerto"
+    ],
+    "correcta": 0,
+    "feedback": "Un enlace troncal permite que el tráfico de varias VLANs viaje a través de un único enlace físico entre switches."
+  },
+  {
+    "pregunta": "64. ¿Qué tecnología de red inalámbrica utiliza el estándar 802.11?",
+    "opciones": ["Wi-Fi", "Bluetooth", "Ethernet", "WiMAX"],
+    "correcta": 0,
+    "feedback": "La familia de estándares 802.11 define las especificaciones para las redes de área local inalámbricas (WLAN)."
+  },
+  {
+    "pregunta": "65. ¿Qué dirección IP se utiliza para identificar el host en la red 192.168.1.0/24?",
+    "opciones": ["Cualquier dirección entre 192.168.1.1 y 192.168.1.254", "192.168.1.0", "192.168.1.255", "192.168.0.1"],
+    "correcta": 0,
+    "feedback": "La .0 es la red y la .255 es el broadcast; las direcciones intermedias son para hosts."
+  },
+  {
+    "pregunta": "66. ¿Qué comando permite configurar una ruta estática flotante?",
+    "opciones": [
+      "ip route [red] [máscara] [salto] [distancia_administrativa]",
+      "ip route float [red] [máscara]",
+      "ip route [red] [máscara] backup",
+      "ip static route [red] [máscara]"
+    ],
+    "correcta": 0,
+    "feedback": "Al añadir un número al final del comando (ej. 200), se asigna una AD mayor para que la ruta sea flotante."
+  },
+  {
+    "pregunta": "67. ¿Qué protocolo se utiliza para asignar nombres de dominio a direcciones IP?",
+    "opciones": ["DNS", "DHCP", "FTP", "SNMP"],
+    "correcta": 0,
+    "feedback": "DNS (Domain Name System) resuelve nombres como 'ejemplo.com' en direcciones IP."
+  },
+  {
+    "pregunta": "68. ¿Qué puerto utiliza el protocolo Telnet?",
+    "opciones": ["23", "22", "21", "25"],
+    "correcta": 0,
+    "feedback": "Telnet utiliza el puerto 23, pero no es seguro ya que envía datos en texto plano."
+  },
+  {
+    "pregunta": "69. ¿Cuál es la máscara de wildcard para una subred con máscara 255.255.252.0?",
+    "opciones": ["0.0.3.255", "0.0.0.255", "255.255.255.0", "0.0.7.255"],
+    "correcta": 0,
+    "feedback": "La wildcard se obtiene restando la máscara de 255.255.255.255 (255-252 = 3)."
+  },
+  {
+    "pregunta": "70. ¿Qué comando se usa para configurar una dirección IP en una interfaz de router?",
+    "opciones": ["ip address [ip] [máscara]", "ip address add [ip]", "set ip address [ip]", "interface ip [ip]"],
+    "correcta": 0,
+    "feedback": "Desde el modo de configuración de interfaz, se usa 'ip address' seguido de la IP y la máscara."
+  },
+  {
+    "pregunta": "71. ¿Qué característica de seguridad de switch limita el número de direcciones MAC permitidas en un puerto?",
+    "opciones": ["Port Security", "DHCP Snooping", "Dynamic ARP Inspection", "ACLs"],
+    "correcta": 0,
+    "feedback": "Port Security permite especificar qué direcciones MAC pueden acceder a un puerto y cuántas."
+  },
+  {
+    "pregunta": "72. ¿Qué comando se utiliza para verificar la configuración de EtherChannel?",
+    "opciones": ["show etherchannel summary", "show port-channel summary", "show interfaces trunk", "show lacp neighbor"],
+    "correcta": 0,
+    "feedback": "Este comando muestra de forma resumida el estado de todos los grupos EtherChannel configurados."
+  },
+  {
+    "pregunta": "73. ¿Qué valor de AD tiene el protocolo EIGRP?",
+    "opciones": ["90", "110", "120", "1"],
+    "correcta": 0,
+    "feedback": "EIGRP tiene una distancia administrativa predeterminada de 90 para rutas internas."
+  },
+  {
+    "pregunta": "74. ¿Qué tipo de mensaje ICMP se utiliza para 'ping'?",
+    "opciones": ["Echo Request / Echo Reply", "Destination Unreachable", "Time Exceeded", "Redirect"],
+    "correcta": 0,
+    "feedback": "Ping envía un Echo Request y espera un Echo Reply para confirmar la conectividad."
+  },
+  {
+    "pregunta": "75. ¿Qué comando se usa para habilitar SSH en un router Cisco?",
+    "opciones": ["ip domain-name [nombre] y crypto key generate rsa", "ssh enable", "service ssh", "enable ssh"],
+    "correcta": 0,
+    "feedback": "Para habilitar SSH se requiere definir un nombre de dominio y generar las llaves criptográficas."
+  },
+  {
+    "pregunta": "76. ¿Cuál es el propósito principal de una VLAN?",
+    "opciones": [
+      "Segmentar dominios de broadcast en la capa 2",
+      "Aumentar el ancho de banda del enlace",
+      "Enrutar paquetes entre redes",
+      "Asignar direcciones IP dinámicas"
+    ],
+    "correcta": 0,
+    "feedback": "Las VLANs permiten agrupar lógicamente dispositivos para reducir el tráfico de difusión innecesario."
+  },
+  {
+    "pregunta": "77. ¿Qué protocolo utiliza el puerto 53?",
+    "opciones": ["DNS", "DHCP", "SMTP", "POP3"],
+    "correcta": 0,
+    "feedback": "DNS utiliza el puerto 53 tanto para consultas UDP (mayoría) como para transferencias de zona TCP."
+  },
+  {
+    "pregunta": "78. ¿Qué comando se utiliza para ver los detalles de una interfaz, incluyendo errores y colisiones?",
+    "opciones": ["show interfaces [nombre]", "show ip interface brief", "show vlan brief", "show interface status"],
+    "correcta": 0,
+    "feedback": "Este comando proporciona estadísticas detalladas de la capa física y de enlace de la interfaz."
+  },
+  {
+    "pregunta": "79. ¿Qué protocolo FHRP permite el balanceo de carga real entre varios routers?",
+    "opciones": ["GLBP", "HSRP", "VRRP", "STP"],
+    "correcta": 0,
+    "feedback": "GLBP (Gateway Load Balancing Protocol) es capaz de distribuir el tráfico entre varios routers activos."
+  },
+  {
+    "pregunta": "80. ¿Qué máscara de subred corresponde a /30?",
+    "opciones": ["255.255.255.252", "255.255.255.248", "255.255.255.240", "255.255.255.0"],
+    "correcta": 0,
+    "feedback": "Un /30 deja solo 2 bits para hosts (4 combinaciones, 2 útiles), resultando en .252."
+  },
+  {
+    "pregunta": "81. ¿Qué comando se utiliza para ingresar al modo de configuración de una subinterfaz para Router-on-a-stick?",
+    "opciones": ["interface [nombre_interfaz].[número_subinterfaz]", "interface sub [número]", "encapsulation dot1q [vlan]", "ip address [ip] [máscara]"],
+    "correcta": 0,
+    "feedback": "Se utiliza el nombre de la interfaz física seguido de un punto y el identificador lógico (ej. interface g0/0.10)."
+  },
+  {
+    "pregunta": "82. ¿Cuál es el propósito del comando 'encapsulation dot1q [vlan]'?",
+    "opciones": [
+      "Definir el protocolo de trunking y la VLAN asociada en una subinterfaz",
+      "Habilitar el cifrado en la interfaz",
+      "Configurar la velocidad del enlace",
+      "Asignar una dirección IP a la interfaz física"
+    ],
+    "correcta": 0,
+    "feedback": "Este comando vincula la subinterfaz con una VLAN específica utilizando el estándar IEEE 802.1Q."
+  },
+  {
+    "pregunta": "83. ¿Qué protocolo se utiliza para la resolución de direcciones IP a direcciones MAC en IPv4?",
+    "opciones": ["ARP", "ICMP", "DHCP", "RARP"],
+    "correcta": 0,
+    "feedback": "ARP (Address Resolution Protocol) permite a un host encontrar la dirección física de otro host en la misma red local."
+  },
+  {
+    "pregunta": "84. ¿Qué tipo de memoria utiliza un router Cisco para almacenar el archivo de configuración de inicio (startup-config)?",
+    "opciones": ["NVRAM", "RAM", "ROM", "Flash"],
+    "correcta": 0,
+    "feedback": "La NVRAM es una memoria no volátil que mantiene la configuración incluso cuando el dispositivo se apaga."
+  },
+  {
+    "pregunta": "85. ¿Cuál es el rango de puertos efímeros o dinámicos?",
+    "opciones": ["49152 a 65535", "1024 a 49151", "0 a 1023", "1 a 65535"],
+    "correcta": 0,
+    "feedback": "Estos puertos son asignados dinámicamente por el sistema operativo del cliente para sesiones de comunicación."
+  },
+  {
+    "pregunta": "86. ¿Qué comando permite verificar el estado del protocolo Spanning Tree en una VLAN específica?",
+    "opciones": ["show spanning-tree vlan [id]", "show stp status", "show vlan stp", "show interface spanning-tree"],
+    "correcta": 0,
+    "feedback": "Este comando detalla el Root Bridge, el costo del camino y el estado de los puertos para esa VLAN."
+  },
+  {
+    "pregunta": "87. ¿Qué dirección IPv6 se reserva para el tráfico Multicast?",
+    "opciones": ["FF00::/8", "FE80::/10", "2001::/3", "FC00::/7"],
+    "correcta": 0,
+    "feedback": "Todas las direcciones IPv6 que comienzan con 'FF' son direcciones de multidifusión."
+  },
+  {
+    "pregunta": "88. ¿Qué comando se utiliza para habilitar el servicio de servidor DHCP en un router Cisco?",
+    "opciones": ["service dhcp", "ip dhcp enable", "dhcp pool [nombre]", "ip address dhcp"],
+    "correcta": 0,
+    "feedback": "El comando 'service dhcp' suele estar habilitado por defecto, pero permite activar o desactivar la funcionalidad globalmente."
+  },
+  {
+    "pregunta": "89. ¿Cuál es la distancia administrativa de una ruta aprendida por RIP?",
+    "opciones": ["120", "90", "110", "1"],
+    "correcta": 0,
+    "feedback": "RIP se considera menos confiable que OSPF o EIGRP, por lo que tiene una AD de 120."
+  },
+  {
+    "pregunta": "90. ¿Qué comando muestra información sobre el software del sistema, la versión de IOS y el hardware del router?",
+    "opciones": ["show version", "show running-config", "show flash", "show system"],
+    "correcta": 0,
+    "feedback": "El comando 'show version' incluye el tiempo de actividad, la versión de la imagen y el registro de configuración."
+  },
+  {
+    "pregunta": "91. ¿Qué modo de puerto de switch se utiliza para conectar un teléfono IP y una PC simultáneamente?",
+    "opciones": ["Multi-VLAN / Voice VLAN", "Trunk", "Access", "Dynamic Desirable"],
+    "correcta": 0,
+    "feedback": "Un puerto puede configurarse con una VLAN de acceso para datos y una Voice VLAN para el tráfico de voz."
+  },
+  {
+    "pregunta": "92. ¿Qué protocolo de redundancia de primer salto (FHRP) es propietario de Cisco?",
+    "opciones": ["HSRP", "VRRP", "ICMP", "STP"],
+    "correcta": 0,
+    "feedback": "HSRP (Hot Standby Router Protocol) es la solución de Cisco para proporcionar redundancia de gateway."
+  },
+  {
+    "pregunta": "93. ¿Qué comando permite excluir direcciones IP específicas para que no sean asignadas por DHCP?",
+    "opciones": ["ip dhcp excluded-address [inicio] [fin]", "dhcp exclude [ip]", "ip pool exclude [ip]", "no ip address dhcp"],
+    "correcta": 0,
+    "feedback": "Este comando evita que direcciones críticas (como gateways o servidores) se asignen por error a clientes."
+  },
+  {
+    "pregunta": "94. ¿Qué tipo de tráfico se prioriza generalmente mediante QoS?",
+    "opciones": ["Voz y Video", "HTTP", "FTP", "Correo electrónico"],
+    "correcta": 0,
+    "feedback": "El tráfico en tiempo real es sensible al retardo y la fluctuación (jitter), por lo que requiere prioridad."
+  },
+  {
+    "pregunta": "95. ¿Qué comando permite configurar el mensaje del día (MOTD) en un dispositivo?",
+    "opciones": ["banner motd # [mensaje] #", "message motd [mensaje]", "set banner [mensaje]", "motd [mensaje]"],
+    "correcta": 0,
+    "feedback": "El banner MOTD se muestra a cualquier usuario que intente acceder al dispositivo."
+  },
+  {
+    "pregunta": "96. ¿Cuál es la función del plano de datos en un dispositivo de red?",
+    "opciones": ["Reenviar paquetes basados en la tabla de rutas o de direcciones MAC", "Tomar decisiones de enrutamiento", "Gestionar el dispositivo vía SSH", "Actualizar protocolos de red"],
+    "correcta": 0,
+    "feedback": "El plano de datos (o plano de reenvío) se encarga de mover el tráfico lo más rápido posible."
+  },
+  {
+    "pregunta": "97. ¿Qué comando se usa para ver la tabla de vecinos CDP?",
+    "opciones": ["show cdp neighbors", "show neighbors cdp", "show ip cdp", "show cdp interface"],
+    "correcta": 0,
+    "feedback": "Muestra el ID del dispositivo, la interfaz local, el tiempo de espera, la plataforma y el ID del puerto del vecino."
+  },
+  {
+    "pregunta": "98. ¿Qué puerto utiliza el protocolo SNMP?",
+    "opciones": ["161 / 162", "25", "110", "143"],
+    "correcta": 0,
+    "feedback": "SNMP utiliza el puerto 161 para consultas y el 162 para el envío de traps."
+  },
+  {
+    "pregunta": "99. ¿Cuál es la máscara de red predeterminada para una dirección de Clase C?",
+    "opciones": ["255.255.255.0", "255.255.0.0", "255.0.0.0", "255.255.255.252"],
+    "correcta": 0,
+    "feedback": "Las direcciones de Clase C (192-223) usan por defecto una máscara /24."
+  },
+  {
+    "pregunta": "100. ¿Qué comando permite configurar un router como cliente DHCP en una interfaz específica?",
+    "opciones": ["ip address dhcp", "dhcp client enable", "interface dhcp", "ip dhcp address"],
+    "correcta": 0,
+    "feedback": "Esto es común en interfaces conectadas a módems de cable o DSL para obtener una IP pública."
+  },
+  {
+    "pregunta": "101. ¿Qué comando se utiliza para limitar el acceso a las líneas VTY mediante una ACL?",
+    "opciones": ["access-class [número] in", "access-group [número] in", "ip access-group [número] in", "access-list [número] vty"],
+    "correcta": 0,
+    "feedback": "El comando 'access-class' se aplica específicamente dentro de la configuración de line vty para controlar quién puede conectarse remotamente."
+  },
+  {
+    "pregunta": "102. ¿Cuál es el propósito del comando 'switchport port-security violation restrict'?",
+    "opciones": [
+      "Descarta paquetes de direcciones MAC desconocidas e incrementa el contador de infracciones",
+      "Apaga la interfaz inmediatamente ante una infracción",
+      "Permite el tráfico pero envía un mensaje de log",
+      "Descarta paquetes sin notificar al administrador"
+    ],
+    "correcta": 0,
+    "feedback": "A diferencia del modo 'shutdown', 'restrict' no apaga el puerto, pero sí registra la infracción y descarta el tráfico no autorizado."
+  },
+  {
+    "pregunta": "103. ¿Qué protocolo se utiliza para la gestión y monitorización de dispositivos de red?",
+    "opciones": ["SNMP", "SMTP", "SSH", "NTP"],
+    "correcta": 0,
+    "feedback": "SNMP (Simple Network Management Protocol) permite a los administradores supervisar el estado y rendimiento de la red."
+  },
+  {
+    "pregunta": "104. ¿Qué longitud tiene una dirección IPv6?",
+    "opciones": ["128 bits", "32 bits", "64 bits", "48 bits"],
+    "correcta": 0,
+    "feedback": "IPv6 utiliza direcciones de 128 bits escritas en formato hexadecimal, lo que permite un espacio de direccionamiento masivo."
+  },
+  {
+    "pregunta": "105. ¿Qué comando se usa para configurar una ruta estática en un router?",
+    "opciones": ["ip route [red_destino] [máscara] [siguiente_salto]", "route add [red]", "router static [red]", "ip static-route [red]"],
+    "correcta": 0,
+    "feedback": "El comando 'ip route' define manualmente la ruta hacia una red remota indicando el destino y por dónde llegar."
+  },
+  {
+    "pregunta": "106. ¿Qué característica define a una red de área local (LAN)?",
+    "opciones": [
+      "Cubre un área geográfica pequeña como una oficina o hogar",
+      "Conecta ciudades o países",
+      "Es propiedad de un proveedor de servicios de internet",
+      "Utiliza exclusivamente tecnología inalámbrica"
+    ],
+    "correcta": 0,
+    "feedback": "Las LAN se limitan a espacios físicos reducidos y suelen tener altas velocidades de transferencia."
+  },
+  {
+    "pregunta": "107. ¿Cuál es la función del comando 'copy running-config startup-config'?",
+    "opciones": [
+      "Guarda la configuración actual en la memoria NVRAM",
+      "Carga la configuración de fábrica",
+      "Copia la configuración a un servidor TFTP",
+      "Actualiza el sistema operativo IOS"
+    ],
+    "correcta": 0,
+    "feedback": "Este comando asegura que la configuración activa no se pierda cuando el dispositivo se reinicie."
+  },
+  {
+    "pregunta": "108. ¿Qué protocolo utiliza el algoritmo SPF (Shortest Path First)?",
+    "opciones": ["OSPF", "EIGRP", "RIP", "BGP"],
+    "correcta": 0,
+    "feedback": "OSPF utiliza el algoritmo de Dijkstra para calcular la ruta más corta libre de bucles en la topología."
+  },
+  {
+    "pregunta": "109. ¿Qué dirección IPv4 es privada según la RFC 1918?",
+    "opciones": ["172.16.5.1", "200.1.1.1", "8.8.8.8", "169.254.1.1"],
+    "correcta": 0,
+    "feedback": "El rango 172.16.0.0 a 172.31.255.255 está reservado para uso privado en redes internas."
+  },
+  {
+    "pregunta": "110. ¿Qué comando permite ver la tabla de direcciones MAC de un switch?",
+    "opciones": ["show mac address-table", "show mac-address-table", "show ip mac table", "show bridge"],
+    "correcta": [0, 1],
+    "feedback": "Dependiendo de la versión del IOS, este comando muestra qué direcciones MAC están asociadas a cada puerto físico."
+  },
+  {
+    "pregunta": "111. ¿Cuál es la función del protocolo ARP?",
+    "opciones": [
+      "Asociar una dirección IP conocida con una dirección MAC",
+      "Traducir nombres de dominio a IP",
+      "Asignar IPs dinámicas",
+      "Enrutar paquetes entre subredes"
+    ],
+    "correcta": 0,
+    "feedback": "ARP es esencial en redes Ethernet para que un dispositivo pueda encapsular un paquete en una trama de capa 2."
+  },
+  {
+    "pregunta": "112. ¿Qué significa la sigla 'SVI'?",
+    "opciones": ["Switched Virtual Interface", "Static Virtual IP", "Standard VLAN Interface", "Serial Virtual Interface"],
+    "correcta": 0,
+    "feedback": "Una SVI es una interfaz lógica configurada para una VLAN en un switch para permitir la administración o el enrutamiento."
+  },
+  {
+    "pregunta": "113. ¿Qué comando se usa para verificar las adyacencias de EIGRP?",
+    "opciones": ["show ip eigrp neighbors", "show ip eigrp summary", "show eigrp neighbors", "show ip route eigrp"],
+    "correcta": 0,
+    "feedback": "Este comando confirma que el router ha establecido comunicación con sus vecinos directamente conectados."
+  },
+  {
+    "pregunta": "114. ¿Qué tipo de cable se utiliza para conectar dos switches entre sí (sin Auto-MDIX)?",
+    "opciones": ["Cable cruzado", "Cable directo", "Cable rollover", "Cable coaxial"],
+    "correcta": 0,
+    "feedback": "Para conectar dispositivos del mismo tipo (switch a switch), se requiere cruzar los hilos de transmisión y recepción."
+  },
+  {
+    "pregunta": "115. ¿Cuál es el puerto predeterminado para el protocolo HTTPS?",
+    "opciones": ["443", "80", "22", "8080"],
+    "correcta": 0,
+    "feedback": "HTTPS utiliza el puerto 443 para comunicaciones web cifradas mediante SSL/TLS."
+  },
+  {
+    "pregunta": "116. ¿Qué comando permite visualizar el estado de las interfaces de manera resumida?",
+    "opciones": ["show ip interface brief", "show interface status", "show running-config interface", "show ip route"],
+    "correcta": 0,
+    "feedback": "Es el comando más utilizado para verificar rápidamente si una interfaz está 'up/up' y qué IP tiene asignada."
+  },
+  {
+    "pregunta": "117. ¿Qué característica tiene el protocolo TCP que no tiene UDP?",
+    "opciones": ["Control de flujo y entrega garantizada", "Baja latencia", "Transmisión sin conexión", "Multidifusión"],
+    "correcta": 0,
+    "feedback": "TCP utiliza acuses de recibo (ACK) para asegurar que todos los datos lleguen correctamente al destino."
+  },
+  {
+    "pregunta": "118. ¿Qué comando se usa para configurar una ruta estática predeterminada en IPv6?",
+    "opciones": ["ipv6 route ::/0 [siguiente_salto]", "ipv6 route 0::0/0 [siguiente_salto]", "ipv6 default-route [ip]", "ip route ::/0"],
+    "correcta": 0,
+    "feedback": "La dirección ::/0 representa todas las redes posibles en el direccionamiento IPv6."
+  },
+  {
+    "pregunta": "119. ¿Cuál es la función del comando 'vtp mode client'?",
+    "opciones": [
+      "El switch no puede crear VLANs, solo recibe actualizaciones del servidor",
+      "El switch puede crear y borrar VLANs globalmente",
+      "El switch ignora todas las actualizaciones de VTP",
+      "El switch actúa como raíz del árbol de expansión"
+    ],
+    "correcta": 0,
+    "feedback": "En modo cliente, el switch sincroniza su base de datos de VLANs con la del servidor VTP del dominio."
+  },
+  {
+    "pregunta": "120. ¿Qué protocolo se utiliza para enviar correos electrónicos desde un cliente a un servidor?",
+    "opciones": ["SMTP", "POP3", "IMAP", "HTTP"],
+    "correcta": 0,
+    "feedback": "SMTP (Simple Mail Transfer Protocol) es el estándar para la transferencia de mensajes de correo electrónico."
+  },
+  {
+    "pregunta": "121. ¿Qué comando se utiliza para aplicar una ACL a una interfaz para filtrar el tráfico entrante?",
+    "opciones": ["ip access-group [número] in", "access-list [número] in", "ip access-list [número] in", "interface access-group [número]"],
+    "correcta": 0,
+    "feedback": "El comando 'ip access-group' se utiliza en el modo de configuración de interfaz para activar la ACL en una dirección específica."
+  },
+  {
+    "pregunta": "122. ¿Cuál es el propósito del protocolo ICMP?",
+    "opciones": ["Proporcionar retroalimentación sobre problemas de entrega de paquetes IP", "Asignar direcciones IP", "Cifrar el tráfico de red", "Gestionar la base de datos de VLAN"],
+    "correcta": 0,
+    "feedback": "ICMP es utilizado por dispositivos de red para enviar mensajes de error e información operativa."
+  },
+  {
+    "pregunta": "123. ¿Qué tipo de ruta estática tiene una red y máscara de destino de todos ceros?",
+    "opciones": ["Ruta estática predeterminada", "Ruta de host", "Ruta resumida", "Ruta flotante"],
+    "correcta": 0,
+    "feedback": "La ruta 0.0.0.0/0 es la ruta por defecto utilizada cuando no hay una ruta específica para el destino."
+  },
+  {
+    "pregunta": "124. ¿Qué comando se usa para verificar las estadísticas de NAT?",
+    "opciones": ["show ip nat statistics", "show ip nat translations", "show running-config", "show ip route"],
+    "correcta": 0,
+    "feedback": "Muestra el número total de traducciones activas, los parámetros de configuración y el número de aciertos (hits)."
+  },
+  {
+    "pregunta": "125. ¿Cuál es la función de la capa de acceso en el modelo jerárquico de Cisco?",
+    "opciones": ["Proporcionar puntos de conexión a la red para los usuarios finales", "Conectar diferentes edificios", "Realizar el enrutamiento de alta velocidad", "Servir de columna vertebral de la red"],
+    "correcta": 0,
+    "feedback": "La capa de acceso es donde los dispositivos de los usuarios (PCs, impresoras, etc.) se conectan a la red."
+  },
+  {
+    "pregunta": "126. ¿Qué puerto utiliza el protocolo POP3?",
+    "opciones": ["110", "143", "25", "443"],
+    "correcta": 0,
+    "feedback": "POP3 utiliza el puerto 110 para descargar correos electrónicos desde un servidor al cliente."
+  },
+  {
+    "pregunta": "127. ¿Qué comando se utiliza para habilitar el enrutamiento OSPF en un router?",
+    "opciones": ["router ospf [id_proceso]", "ip ospf [id_proceso]", "ospf enable", "router ospf area [id]"],
+    "correcta": 0,
+    "feedback": "El ID de proceso es local al router y se utiliza para identificar la instancia del protocolo OSPF."
+  },
+  {
+    "pregunta": "128. ¿Qué significa que una dirección IPv6 sea Global Unicast?",
+    "opciones": ["Es una dirección pública enrutable en Internet", "Es una dirección privada para uso local", "Se utiliza para enviar paquetes a todos los hosts", "Es equivalente a la dirección link-local"],
+    "correcta": 0,
+    "feedback": "Las Global Unicast (GUA) son direcciones únicas a nivel mundial en el espacio IPv6."
+  },
+  {
+    "pregunta": "129. ¿Qué comando se usa para configurar la prioridad de un switch en STP?",
+    "opciones": ["spanning-tree vlan [id] priority [valor]", "spanning-tree priority [valor]", "priority stp [valor]", "vlan priority [valor]"],
+    "correcta": 0,
+    "feedback": "Bajar la prioridad (por defecto 32768) aumenta las posibilidades de que un switch se convierta en Root Bridge."
+  },
+  {
+    "pregunta": "130. ¿Qué protocolo se utiliza para la transferencia de archivos de forma no segura?",
+    "opciones": ["FTP", "SFTP", "SSH", "HTTPS"],
+    "correcta": 0,
+    "feedback": "FTP transfiere datos y credenciales en texto plano, lo que lo hace vulnerable a intercepciones."
+  },
+  {
+    "pregunta": "131. ¿Qué comando permite ver los procesos de NAT en tiempo real?",
+    "opciones": ["debug ip nat", "show ip nat translations", "monitor ip nat", "show logs nat"],
+    "correcta": 0,
+    "feedback": "El comando debug muestra las traducciones a medida que ocurren, útil para resolución de problemas."
+  },
+  {
+    "pregunta": "132. ¿Qué dirección MAC se utiliza como destino en una solicitud ARP?",
+    "opciones": ["FF:FF:FF:FF:FF:FF", "00:00:00:00:00:00", "La MAC del router", "La MAC del host destino"],
+    "correcta": 0,
+    "feedback": "La solicitud ARP es un broadcast para que todos los dispositivos en la LAN la reciban."
+  },
+  {
+    "pregunta": "133. ¿Cuál es la máscara de subred para un /28?",
+    "opciones": ["255.255.255.240", "255.255.255.248", "255.255.255.192", "255.255.255.224"],
+    "correcta": 0,
+    "feedback": "Un /28 utiliza 4 bits para subredes (128+64+32+16 = 240)."
+  },
+  {
+    "pregunta": "134. ¿Qué comando desactiva la búsqueda de DNS en un router Cisco?",
+    "opciones": ["no ip domain-lookup", "no ip dns-lookup", "no domain-name", "disable dns"],
+    "correcta": 0,
+    "feedback": "Evita que el router intente traducir comandos mal escritos como si fueran nombres de dominio."
+  },
+  {
+    "pregunta": "135. ¿Qué tecnología se usa para conectar sitios remotos a través de Internet de forma segura?",
+    "opciones": ["VPN", "VLAN", "NAT", "OSPF"],
+    "correcta": 0,
+    "feedback": "Una VPN crea un túnel cifrado sobre una red pública como Internet."
+  },
+  {
+    "pregunta": "136. ¿Qué ocurre cuando un switch recibe una trama cuya dirección MAC de destino no está en su tabla?",
+    "opciones": ["La inunda por todos los puertos excepto por el que llegó", "La descarta", "La envía al router", "La almacena en el buffer"],
+    "correcta": 0,
+    "feedback": "Este proceso se conoce como inundación de unicast desconocido (Unknown Unicast Flooding)."
+  },
+  {
+    "pregunta": "137. Al configurar una ruta estática IPv6 completamente especificada, ¿qué se debe incluir?",
+    "opciones": ["La interfaz de salida y la dirección del siguiente salto", "Solo la interfaz de salida", "Solo el siguiente salto", "La distancia administrativa de 2"],
+    "correcta": 0,
+    "feedback": "Una ruta completamente especificada incluye tanto la interfaz de salida como la dirección IP del siguiente salto."
+  },
+  {
+    "pregunta": "138. ¿Qué término describe cuando un router descarta paquetes porque la cola está llena?",
+    "opciones": ["Eliminación de cola (Tail drop)", "WRED", "Modelado", "Vigilancia"],
+    "correcta": 0,
+    "feedback": "El 'tail drop' ocurre cuando los recursos de retención de paquetes se agotan por completo."
+  },
+  {
+    "pregunta": "139. ¿Cuál es la red de destino en una ruta estática predeterminada IPv6?",
+    "opciones": ["::/0", "2001::/3", "FE80::/10", "::1/128"],
+    "correcta": 0,
+    "feedback": "Al igual que 0.0.0.0/0 en IPv4, ::/0 representa cualquier red en IPv6."
+  },
+  {
+    "pregunta": "140. ¿Qué ataque LAN aprovecha las transmisiones no cifradas de protocolos de descubrimiento de Cisco?",
+    "opciones": ["Reconocimiento CDP", "Ataque ARP", "Suplantación de DHCP", "Bucle STP"],
+    "correcta": 0,
+    "feedback": "El reconocimiento CDP permite a un atacante obtener información sensible sobre el hardware y software de los dispositivos vecinos."
+  }
 ]

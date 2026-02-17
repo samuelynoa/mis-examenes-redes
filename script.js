@@ -40,6 +40,8 @@ function renderizarPreguntas() {
         const tipoInput = esMultiple ? 'checkbox' : 'radio';
         // HTML de la imagen si existe
         const htmlImagen = p.imagen ? `<img src="${p.imagen}" class="img-fluid my-3 border rounded" style="max-height: 300px;">` : '';
+        // Dentro de renderizarPreguntas, antes de las opciones:
+const htmlImagen = p.imagen ? `<div class="text-center"><img src="${p.imagen}" class="img-fluid my-3 border rounded shadow-sm" style="max-height: 350px;"></div>` : '';
 
         return `
         <div class="card mb-3 shadow-sm">

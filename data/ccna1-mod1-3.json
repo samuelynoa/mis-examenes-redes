@@ -1,5 +1,5 @@
-[
-  {
+   [
+ {
     "pregunta": "1. Un empleado de una sucursal está realizando una cotización para un cliente. Para ello, necesita acceder a la información confidencial sobre precios que se encuentra en los servidores internos de la oficina central. ¿A qué tipo de red debería acceder el empleado?",
     "opciones": ["Internet", "Una intranet", "Una red de área local", "Una extranet"],
     "correcta": 1,
@@ -233,4 +233,4 @@
     "correcta": 0,
     "feedback": "En redes P2P, cada dispositivo actúa como cliente y servidor, sin servidor central."
   }
-]
+   ]

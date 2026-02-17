@@ -134,8 +134,7 @@
     "opciones": ["ARP", "FTP", "NAT", "PPP", "DHCP", "DNS"],
     "correcta": [1, 4, 5],
     "feedback": "FTP, DHCP y DNS operan en la capa de aplicación."
-  }
-
+  },
   {
     "pregunta": "31. ¿Qué característica de una red permite que esta se expanda rápidamente para admitir a nuevos usuarios y aplicaciones sin afectar el rendimiento del servicio enviado a los usuarios actuales?",
     "opciones": ["Escalabilidad", "Seguridad", "Calidad de servicio (QoS)", "Accesibilidad"],

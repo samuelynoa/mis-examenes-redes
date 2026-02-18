@@ -1,6 +1,7 @@
 [
   {
     "pregunta": "1. Consulte la ilustración. La NAT estática se configura para permitir el acceso de la PC 1 al servidor web en la red interna. ¿Qué dos direcciones se requieren en lugar de A y B para completar la configuración de la NAT estática? (Elija dos opciones.)",
+    "imagen": "img/p1.jpg",
     "opciones": ["A = 10.1.0.13", "B = 209.165.201.1", "B = 209.165.201.7", "B = 10.0.254.5", "A = 209.165.201.2"],
     "correcta": [0, 1],
     "feedback": "La NAT estática es una asignación personalizada entre una dirección local interna y una dirección global interna. Mediante el uso de una NAT estática, los dispositivos externos pueden iniciar conexiones a dispositivos internos con las direcciones globales internas."

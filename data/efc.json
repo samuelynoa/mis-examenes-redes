@@ -31,6 +31,7 @@
   },
   {
     "pregunta": "5. Al aprender rutas al mismo destino de diferentes protocolos de enrutamiento, ¿qué utiliza un router para elegir la mejor ruta?",
+    "imagen": "img/p5.jpg",
     "opciones": ["Costo", "Métrica", "Conteo de saltos", "Distancia administrativa"],
     "correcta": 3,
     "feedback": "La distancia administrativa (AD) se utiliza para determinar qué protocolo de enrutamiento es más confiable y, por lo tanto, cuál elegir si hay múltiples fuentes para la misma ruta."
@@ -54,6 +55,7 @@
   },
   {
     "pregunta": "8. ¿En qué situación se requieren elecciones de DR y BDR en una red OSPF?",
+    "imagen": "img/p8.jpg",
     "opciones": [
       "Cuando los dos vecinos adyacentes están en dos redes diferentes.",
       "Cuando los routers están interconectados a través de una red Ethernet común.",
@@ -129,6 +131,7 @@
   },
   {
     "pregunta": "18. ¿Qué protocolo FHRP es estándar abierto?",
+    "imagen": "img/p18.jpg",
     "opciones": ["VRRP", "HSRP", "GLBP", "STP"],
     "correcta": 0,
     "feedback": "VRRP es el protocolo estándar de la industria, mientras que HSRP y GLBP son propietarios de Cisco."
@@ -219,6 +222,7 @@
   },
   {
     "pregunta": "33. ¿Qué protocolo utiliza el comando 'ping'?",
+    "imagen": "img/p33.jpg",
     "opciones": ["ICMP", "TCP", "UDP", "ARP"],
     "correcta": 0,
     "feedback": "Ping utiliza mensajes de solicitud de eco y respuesta de eco de ICMP para verificar la conectividad."
@@ -297,6 +301,7 @@
   },
   {
     "pregunta": "46. ¿Cuál es la máscara de subred para un prefijo /27?",
+    "imagen": "img/p46.jpg",
     "opciones": ["255.255.255.224", "255.255.255.192", "255.255.255.240", "255.255.255.248"],
     "correcta": 0,
     "feedback": "Un prefijo /27 utiliza 3 bits de la cuarta octeto (128+64+32 = 224)."
@@ -363,6 +368,7 @@
   },
   {
     "pregunta": "57. ¿Cuál es el ancho de banda predeterminado de referencia para OSPF?",
+    "imagen": "img/p57.jpg",
     "opciones": ["100 Mbps", "10 Mbps", "1000 Mbps", "1 Gbps"],
     "correcta": 0,
     "feedback": "Por defecto, OSPF usa 100 Mbps como referencia, lo que puede requerir ajuste en redes modernas más rápidas."
@@ -375,12 +381,14 @@
   },
   {
     "pregunta": "59. ¿Qué tipo de ruta estática se usa para enviar todo el tráfico a un ISP?",
+    "imagen": "img/p59.jpg",
     "opciones": ["Ruta predeterminada", "Ruta resumida", "Ruta de host", "Ruta flotante"],
     "correcta": 0,
     "feedback": "Una ruta predeterminada (0.0.0.0/0) se usa cuando no hay una coincidencia específica en la tabla de rutas."
   },
   {
     "pregunta": "60. ¿Qué protocolo utiliza el puerto 22?",
+    "imagen": "img/p60.jpg",
     "opciones": ["SSH", "Telnet", "FTP", "SMTP"],
     "correcta": 0,
     "feedback": "SSH utiliza el puerto 22 para proporcionar acceso remoto seguro y cifrado."
@@ -439,6 +447,7 @@
   },
   {
     "pregunta": "68. ¿Qué puerto utiliza el protocolo Telnet?",
+    "imagen": "img/p68.jpg",
     "opciones": ["23", "22", "21", "25"],
     "correcta": 0,
     "feedback": "Telnet utiliza el puerto 23, pero no es seguro ya que envía datos en texto plano."
@@ -451,6 +460,7 @@
   },
   {
     "pregunta": "70. ¿Qué comando se usa para configurar una dirección IP en una interfaz de router?",
+    "imagen": "img/p70.jpg",
     "opciones": ["ip address [ip] [máscara]", "ip address add [ip]", "set ip address [ip]", "interface ip [ip]"],
     "correcta": 0,
     "feedback": "Desde el modo de configuración de interfaz, se usa 'ip address' seguido de la IP y la máscara."
@@ -463,6 +473,7 @@
   },
   {
     "pregunta": "72. ¿Qué comando se utiliza para verificar la configuración de EtherChannel?",
+    "imagen": "img/p72.jpg",
     "opciones": ["show etherchannel summary", "show port-channel summary", "show interfaces trunk", "show lacp neighbor"],
     "correcta": 0,
     "feedback": "Este comando muestra de forma resumida el estado de todos los grupos EtherChannel configurados."
@@ -557,6 +568,7 @@
   },
   {
     "pregunta": "86. ¿Qué comando permite verificar el estado del protocolo Spanning Tree en una VLAN específica?",
+    "imagen": "img/p86.jpg",
     "opciones": ["show spanning-tree vlan [id]", "show stp status", "show vlan stp", "show interface spanning-tree"],
     "correcta": 0,
     "feedback": "Este comando detalla el Root Bridge, el costo del camino y el estado de los puertos para esa VLAN."
@@ -653,6 +665,7 @@
   },
   {
     "pregunta": "102. ¿Cuál es el propósito del comando 'switchport port-security violation restrict'?",
+    "imagen": "img/p102.jpg",
     "opciones": [
       "Descarta paquetes de direcciones MAC desconocidas e incrementa el contador de infracciones",
       "Apaga la interfaz inmediatamente ante una infracción",
@@ -670,6 +683,7 @@
   },
   {
     "pregunta": "104. ¿Qué longitud tiene una dirección IPv6?",
+    "imagen": "img/p104.jpg",
     "opciones": ["128 bits", "32 bits", "64 bits", "48 bits"],
     "correcta": 0,
     "feedback": "IPv6 utiliza direcciones de 128 bits escritas en formato hexadecimal, lo que permite un espacio de direccionamiento masivo."
